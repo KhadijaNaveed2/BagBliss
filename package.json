@@ -5,10 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node Backend/server.js",
-    "server": "nodemon Backend/server.js",
-    "Frontend": "npm start --prefix ./Frontend",
-    "dev": "concurrently \"npm run server\"  \"npm run Frontend\" "
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
   },
   "keywords": [],
   "author": "bagbliss",
