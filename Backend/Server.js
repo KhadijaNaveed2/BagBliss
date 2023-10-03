@@ -27,7 +27,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname, "../Frontend/build")));
+app.use(express.static(path.join(__dirname, "./Frontend/build")));
 
 // ROUTES
 app.use("/api/v1/auth", authRoute);
@@ -36,7 +36,7 @@ app.use("/api/v1/product", productRoute);
 
 //rest Api's
 app.use("*", function(req,res) {
-   res.sendFile(path.join(__dirname, "../Frontend/build/index.html"));
+   res.sendFile(path.join(__dirname, "./Frontend/build/index.html"));
 })
 
 
