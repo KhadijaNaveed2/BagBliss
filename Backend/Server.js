@@ -16,9 +16,12 @@ dotenv.config();
 //database config
 connectDB();
 
+//es module fix
+const __filename = (fileURLToPath(import.meta.url));
+const __dirname = path.dirname(__filename);
 //rest objects
 const app = express();
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
  
 //middlewares
 app.use(cors());
@@ -32,7 +35,7 @@ app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoute);
 
 //rest Api's
-app.use("*", function(req,res) {
+app.get("*", function(req,res) {
    res.sendFile(path.join(__dirname, "../Frontend/build/index.html"));
 })
 
