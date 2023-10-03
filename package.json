@@ -2,7 +2,7 @@
   "name": "bagbliss",
   "version": "1.0.0",
   "description": "bagbliss rest api",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "start": "node Backend/server.js"
